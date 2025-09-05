@@ -25,7 +25,7 @@ class LaneDetector:
         blur = cv2.GaussianBlur(gray, (7, 7), 0)
         
         # Edge detection
-        edges = cv2.Canny(blur, 50, 150)
+        edges = cv2.Canny(blur, 5, 150)
         
         # Region of interest (trapezoid shape)
         height, width = edges.shape
@@ -278,5 +278,6 @@ if __name__ == '__main__':
 
     # For starting Flask app
     app.run(host='0.0.0.0', port=5000, threaded=True)
+
 
 processed_frame = None
